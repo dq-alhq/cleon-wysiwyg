@@ -1,0 +1,6 @@
+{
+    "$schema": "https://cleon-ui.vercel.app",
+    "ui": "src/components/ui",
+    "lib": "src/lib",
+    "css": "src/index.css"
+}

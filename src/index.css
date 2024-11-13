@@ -1,0 +1,117 @@
+@import 'tailwindcss/base';
+@import 'tailwindcss/components';
+@import 'tailwindcss/utilities';
+
+@layer base {
+    :root {
+        --background: 0 0% 98.04%; /* zinc-50 */
+        --foreground: 240 10% 3.92%; /* zinc-950 */
+        --primary: 224.3 76.3% 48%; /* blue-700 */
+        --primary-foreground: 0 0% 98.04%; /* zinc-50 */
+        --secondary: 211.7 96.4% 78.4%; /* blue-300 */
+        --secondary-foreground: 226.2 57% 21%; /* blue-950 */
+        --danger: 0 72.22% 50.59%; /* red-600 */
+        --danger-foreground: 0 0% 98.04%; /* zinc-50 */
+        --success: 142.1 76.2% 36.3%; /* green-700 */
+        --success-foreground: 0 0% 98.04%; /* zinc-50 */
+        --warning: 24.6 95% 53.1%; /* orange-500 */
+        --warning-foreground: 0 0% 98.04%; /* zinc-50 */
+        --info: 294.7 72.4% 39.8%; /* fuchsia-500 */
+        --info-foreground: 0 0% 98.04%;
+        --dark: 240 10% 4%; /* zinc-950 */
+        --dark-foreground: 0 0% 98.04%; /* zinc-50 */
+        --muted: 240 4.88% 83.92%; /* zinc-300 */
+        --muted-foreground: 240 3.83% 46.08%; /* zinc-500 */
+        --radius: 0.5rem;
+
+        --primary-chart: 216.74 100% 45%;
+        --secondary-chart: 219.83 100% 77%;
+        --tertiary-chart: 216.01 92% 60%;
+        --highlight-chart: 210 98% 78%;
+        --accent-chart: 210 98% 78%;
+    }
+
+    .dark {
+        --background: 240 10% 3.92%; /* zinc-950 */
+        --foreground: 0 0% 98.04%; /* zinc-50 */
+        --primary: 221.2 83.2% 53.3%; /* blue-600 */
+        --primary-foreground: 0 0% 98.04%; /* zinc-50 */
+        --secondary: 226.2 57% 21%; /* blue-950 */
+        --secondary-foreground: 211.7 96.4% 78.4%; /* blue-300 */
+        --danger: 0 72.2% 50.6%; /* red-600 */
+        --danger-foreground: 0 0% 98.04%;
+        --success: 142.1 76.2% 36.3%; /* green-700 */
+        --success-foreground: 0 0% 98.04%;
+        --warning: 17.5 88.3% 40.4%; /* orange-700 */
+        --warning-foreground: 0 0% 98.04%;
+        --info: 294.7 72.4% 39.8%; /* fuchsia-700 */
+        --info-foreground: 0 0% 98.04%;
+        --dark: 0 0% 98.04%;
+        --dark-foreground: 240 10% 3.92%;
+        --muted: 240 5.2% 33.92%; /* zinc-800 */
+        --muted-foreground: 240 5.03% 64.9%; /* zinc-400 */
+
+        --primary-chart: 221.19 83% 53%;
+        --secondary-chart: 211.99 95% 68%;
+        --tertiary-chart: 216.01 92% 60%;
+        --highlight-chart: 210 98% 78%;
+        --accent-chart: 212 96% 87%;
+    }
+}
+
+@layer base {
+    html {
+        @apply scroll-smooth;
+    }
+
+    * {
+        @apply border-muted;
+        font-feature-settings: 'cv11', 'ss01';
+        font-variation-settings: 'opsz' 850;
+        text-rendering: optimizeLegibility;
+    }
+
+    body {
+        @apply bg-background text-foreground;
+    }
+
+    *::-webkit-scrollbar {
+        @apply size-1.5 rounded-full;
+    }
+
+    *::-webkit-scrollbar-track {
+        @apply rounded-full bg-transparent;
+    }
+
+    *::-webkit-scrollbar-thumb {
+        @apply rounded-xl border border-transparent bg-muted;
+    }
+}
+
+@layer components {
+    .recharts-rectangle.recharts-tooltip-cursor {
+        @apply fill-foreground/10;
+    }
+
+    .overflow-auto,
+    .overflow-x-auto,
+    .overflow-y-auto,
+    .overflow-scroll,
+    .overflow-x-scroll,
+    .overflow-y-scroll {
+        @apply [&::-webkit-scrollbar-thumb]:rounded-full [&::-webkit-scrollbar-thumb]:bg-transparent [&::-webkit-scrollbar-thumb]:transition [&::-webkit-scrollbar-thumb]:duration-300 [&::-webkit-scrollbar-thumb]:hover:bg-muted;
+    }
+
+    .no-scrollbar {
+        -ms-overflow-style: none; /* Internet Explorer and Edge */
+        scrollbar-width: none; /* Firefox */
+    }
+
+    .no-scrollbar::-webkit-scrollbar {
+        display: none; /* Safari and Chrome */
+    }
+
+    pre::-webkit-scrollbar {
+        display: none;
+    }
+}
